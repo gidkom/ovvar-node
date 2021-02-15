@@ -1,0 +1,31 @@
+{
+  "name": "ovvar-voucher",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublish": "npm run build",
+    "test": "mocha -r ts-node/register tests/**/*.test.ts --timeout 10000"
+  },
+  "author": {
+    "name": "Gideon Kombian"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.25",
+    "chai": "^4.3.0",
+    "mocha": "^8.2.1",
+    "nock": "^13.0.7",
+    "nyc": "^15.1.0",
+    "power-assert": "^1.6.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0"
+  }
+}
