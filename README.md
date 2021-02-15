@@ -52,6 +52,6 @@ const resp = await voucher.validate(voucherPin);
 
 ### Redeem a voucher
 ```
-const resp = await voucher.redeem(redeemPin);
+const resp = await voucher.redeem(voucherPin);
 
 ```
