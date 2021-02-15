@@ -1,15 +1,15 @@
 # Ovvar Voucher
 
-A NodeJS library to interact with ovvar voucher API
+A NodeJS library to interact with ovvar API
 
 &nbsp;
 ## Installation
 
-`yarn add ovvar-voucher-node`
+`yarn add ovvar-node`
 
 OR
 
-`npm install ovvar-voucher-node`    
+`npm install ovvar-node`    
 
 
 ## Usage
@@ -30,7 +30,8 @@ const voucher  = new Voucher(process.env.API_KEY);
 Simple supply the need parameters  
 currency: USD | NGN  
 value: amount value  
-channel: email | sms  
+channel: email | sms
+quantity: quantity of vouchers to be generated
 recipient_phone: phone number to receive voucher pin  
 recipient email: email to receive voucher pin 
 
@@ -39,7 +40,8 @@ const resp = await voucher.generate({
     currency: 'USD',
     value: 1500,
     channel: 'phone',
-    recipient_phone: '2349063079039' 
+    recipient_phone: '2349063079039',
+    quantity: 10
 });
 ```
 
