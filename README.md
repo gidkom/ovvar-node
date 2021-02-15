@@ -27,7 +27,7 @@ const voucher  = new Voucher(process.env.API_KEY);
 ```
 
 ### Generate a new voucher
-Simple supply the need parameters  
+Simply supply the need parameters  
 currency: USD | NGN  
 value: amount value  
 channel: email | sms
