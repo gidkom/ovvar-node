@@ -1,4 +1,4 @@
-# Ovvar Voucher
+# Ovvar
 
 A NodeJS library to interact with ovvar API
 
