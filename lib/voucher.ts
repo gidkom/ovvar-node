@@ -1,7 +1,7 @@
 import { IGenerateVoucher } from './interfaces';
 import request from './request';
 
-export class Voucher {
+class Voucher {
     constructor(
         private apiKey: string, 
         public testing = 0) {
@@ -77,3 +77,5 @@ export class Voucher {
     }
     
 }
+
+export { Voucher }

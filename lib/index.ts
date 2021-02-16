@@ -1,3 +1,5 @@
-import {Voucher} from './voucher';
+import { Voucher } from './voucher';
 
-export default Voucher
+export {
+    Voucher
+};

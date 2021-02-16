@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import * as dotenv from 'dotenv';
 import * as nock from 'nock';
 import {baseUrl} from '../lib/config';
-import Voucher from '../lib/index';
+import {Voucher} from '../lib/index';
 import apiResponse from './response';
 
 dotenv.config({
