@@ -1,5 +1,5 @@
 import { IGenerateVoucher } from './interfaces';
-export declare class Voucher {
+declare class Voucher {
     private apiKey;
     testing: number;
     constructor(apiKey: string, testing?: number);
@@ -34,3 +34,4 @@ export declare class Voucher {
     */
     private _request;
 }
+export { Voucher };
