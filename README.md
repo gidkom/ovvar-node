@@ -21,7 +21,7 @@ Generate an API KEY from the [Ovvar dashboard](https://app.ovvar.com)
 ### Setup
 
 ```
-import Voucher from 'ovvar-voucher-node'
+import { Voucher } from 'ovvar-node'
 
 const voucher  = new Voucher(process.env.API_KEY);
 ```
