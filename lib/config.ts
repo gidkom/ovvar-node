@@ -1,1 +1,1 @@
-export const baseUrl = 'https://api.bitnob.com/api/v1';
+export const baseUrl = 'https://api.ovvar.com';

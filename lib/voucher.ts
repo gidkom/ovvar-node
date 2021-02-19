@@ -1,10 +1,11 @@
 import { IGenerateVoucher } from './interfaces';
-import request from './request';
+import Request from './request';
 
 class Voucher {
+    request: Request;
     constructor(
-        private apiKey: string, 
-        public testing = 0) {
+        private apiKey: string) {
+            this.request = new Request(apiKey);
     }
 
     /**
@@ -17,11 +18,10 @@ class Voucher {
      * @param {string} [recipient_email] - recipient email
      * @return {Promise}
     */
-    async generate(data:IGenerateVoucher) {
+    async generate(data:IGenerateVoucher): Promise<any> {
         let response;
         try {
-            //this.getOrganization()
-            response = await this._request('/vouchers/', data);
+            response = await this.request.makeRequest('POST', '/api/v1/vouchers/', data);
         } catch (error) {
             throw new Error(error.response.data.detail);
         }
@@ -34,10 +34,10 @@ class Voucher {
      * @param {string} pin - voucher pin
      * @return {Promise}
     */
-    async validate(pin: string|number) {
+    async validate(pin: string|number): Promise<any>  {
         let response;
         try {
-            response = await this._request('/vouchers/validate_voucher/', {pin});
+            response = await this.request.makeRequest('POST', '/api/v1/vouchers/validate_voucher/', {pin});
         } catch (error) {
             // console.log(error.response.data)
             throw new Error(error.response.data.detail);
@@ -50,32 +50,15 @@ class Voucher {
      * @param {string} pin - voucher pin
      * @return {Promise}
     */
-    async redeem(pin: string|number) {
+    async redeem(pin: string|number): Promise<any>  {
         let response;
         try {
-            response = await this._request('/vouchers/redeem/', {pin});
+            response = await this.request.makeRequest('POST', '/api/v1/vouchers/redeem/', {pin});
         } catch (error) {
             throw new Error(error.response.data.detail);
         }
         return response;
     }
-
-    /**
-     * Send Http Request
-     * @param {string} endpoint - api endpoint
-     * @param {object} data - payload
-     * @return {Promise}
-    */
-    private async _request(endpoint: string, data: any) {
-        return await request.post(endpoint, data, { 
-                headers: { 
-                    'Authorization': `Api-Key ${this.apiKey}`
-                }
-            }
-
-        );
-    }
-    
 }
 
 export { Voucher }

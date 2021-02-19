@@ -1,8 +1,9 @@
 {
   "name": "ovvar-node",
-  "version": "1.0.21",
+  "version": "1.0.3",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
+  "keywords": ["bitcoin", "ovvar", "crypto"],
   "license": "MIT",
   "scripts": {
     "build": "tsc -p tsconfig.json",

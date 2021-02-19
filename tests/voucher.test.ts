@@ -15,12 +15,12 @@ const redeemPin = '12345678';
 
 // Voucher
 describe('Voucher', () => {
-    voucher  = new Voucher(process.env.API_KEY);
+    voucher  = new Voucher('cP0OsCgO.aXIKpPR8aw1FWwaNBbbkiNAEemGCFKl');
 
     describe('Generate', () => {
         before(() => {
             nock(`${baseUrl}`)
-            .post('/vouchers/')
+            .post('/api/v1/vouchers/')
             .reply(201, apiResponse.generate);
         });
         it('should generate voucher successfully', async () => {
@@ -40,7 +40,7 @@ describe('Voucher', () => {
     describe('Validate', () => {
         before(() => {
             nock(`${baseUrl}`)
-            .post('/vouchers/validate_voucher/')
+            .post('/api/v1/vouchers/validate_voucher/')
             .reply(200, apiResponse.validate);
         });
         it('should validate voucher', async () => {
@@ -56,7 +56,7 @@ describe('Voucher', () => {
     describe('Redeem', () => {
         before(() => {
             nock(`${baseUrl}`)
-            .post('/vouchers/redeem/')
+            .post('/api/v1/vouchers/redeem/')
             .reply(200, apiResponse.redeem);
         });
 

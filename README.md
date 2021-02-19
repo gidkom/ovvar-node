@@ -15,7 +15,7 @@ OR
 ## Usage
 
 ### Authentication
-Generate an API KEY from the [Ovvar dashboard](https://app.ovvar.com)
+Generate an API KEY from the <a href="https://app.ovvar.com" target="_blank">Ovvar dashboard</a>
 
 
 ### Setup
@@ -27,13 +27,13 @@ const voucher  = new Voucher(process.env.API_KEY);
 ```
 
 ### Generate a new voucher
-Simply supply the need parameters  
-currency: USD | NGN  
-value: amount value  
-channel: email | sms
-quantity: quantity of vouchers to be generated
-recipient_phone: phone number to receive voucher pin  
-recipient email: email to receive voucher pin 
+Simply supply the needed parameters  
+**currency**: USD | NGN  
+**value**: amount value  
+**channel**: email | sms
+**quantity**: number of vouchers to generated  
+**recipient_phone**: phone number to receive voucher pin  
+**recipient email**: email to receive voucher pin 
 
 ```
 const resp = await voucher.generate({
